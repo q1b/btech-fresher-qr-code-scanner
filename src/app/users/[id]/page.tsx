@@ -24,7 +24,7 @@ export default async function UserQRPage({ params }: { params: Params }) {
     const fresher = await getFresher(id);
     if (!fresher) return <div>Not found</div>
     return <>
-        <QRCodeSVG height={240} width={240} value={`https://ssu-code-scanner.vercel.app/users/${id}`} />
+        <QRCodeSVG height={240} width={240} value={`${id}`} />
         <p className="mt-2 text-xs">Show above QR Code to get entry</p>
         <div className="mb-10 flex flex-col items-center">
             <h1 className={`text-pretty text-center bg-clip-text text-transparent bg-gradient-to-tr ${randomTailwindcssGradient()} text-5xl font-semibold tracking-tight sm:text-balance sm:text-6xl`}>{fresher.name}</h1>
