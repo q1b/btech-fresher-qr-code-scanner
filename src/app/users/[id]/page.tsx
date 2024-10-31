@@ -24,8 +24,10 @@ export default async function UserQRPage({ params }: { params: Params }) {
     const fresher = await getFresher(id);
     if (!fresher) return <div>Not found</div>
     return <>
-        <QRCodeSVG height={240} width={240} value={`${id}`} />
-        <p className="mt-2 text-xs">Show above QR Code to get entry</p>
+        <div className="w-full flex flex-col items-center justify-center">
+            <QRCodeSVG height={240} width={240} value={`${id}`} />
+            <p className="mt-4 text-xs">Show above QR Code to get entry</p>
+        </div>
         <div className="mb-10 flex flex-col items-center">
             <h1 className={`text-pretty text-center bg-clip-text text-transparent bg-gradient-to-tr ${randomTailwindcssGradient()} text-5xl font-semibold tracking-tight sm:text-balance sm:text-6xl`}>{fresher.name}</h1>
             <h4 className="mt-4 text-3xl text-center font-mono font-bold">You are Welcome to ADUNA 3.0 </h4>
