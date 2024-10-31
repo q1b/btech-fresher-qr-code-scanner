@@ -1,6 +1,8 @@
 import { getFresherList } from "@/db/utils"
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic'
+
 export default async function UsersPage() {
     const fresherList = await getFresherList();
     return (
@@ -9,7 +11,6 @@ export default async function UsersPage() {
                 <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
                         <div className="relative">
-
                             <table className="min-w-full table-fixed divide-y divide-gray-300">
                                 <thead>
                                     <tr>
