@@ -70,8 +70,8 @@ export function QRScanner() {
                   ...fresher,
                   entries: entry,
                 })
-              } catch (error) {
-                alert("FAILED to update entry")
+              } catch (err) {
+                alert(`FAILED to update entry ${err}`)
               } finally {
                 setLoading(false)
               }
